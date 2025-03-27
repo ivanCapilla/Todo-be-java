@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.aop.aspectj.annotation.*; // Importamos la anotación @Aspect para configurar el aspecto
+import org.springframework.web.bind.annotation.DeleteMapping;
 
 import java.util.List; // Importamos la clase List
 import java.util.Optional; // Importamos la clase Optional
@@ -48,5 +49,10 @@ public class TodoController {
   @DeleteMapping("/{id}")
   public void deleteTodo(@PathVariable Long id) {
       todoService.deleteTodo(id);
+  }
+
+  @DeleteMapping("/completed")
+  public void deleteAllCompletedTodos() {
+      todoService.deleteAllCompletedTodos();
   }
 }

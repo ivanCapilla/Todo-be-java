@@ -35,4 +35,9 @@ public class TodoService {
   public void deleteTodo(Long id) {
     todoRepository.deleteById(id);
   }
+
+  public void deleteAllCompletedTodos() {
+    List<Todo> completedTodos = todoRepository.findByCompleted(true);
+    todoRepository.deleteAll(completedTodos);
+  }
 }

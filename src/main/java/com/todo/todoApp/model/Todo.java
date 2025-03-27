@@ -9,14 +9,14 @@ public class Todo {
   private Long id;
 
   private String title;
-  private boolean done;
+  private boolean completed;
 
   public Todo() {
   }
 
-  public Todo(String title, boolean done) {
+  public Todo(String title, boolean completed) {
     this.title = title;
-    this.done = done;
+    this.completed = completed;
   }
 
   public Long getId() {
@@ -36,10 +36,10 @@ public class Todo {
   }
 
   public boolean isCompleted() {
-    return done;
+    return completed;
   }
 
   public void setCompleted(boolean done) {
-    this.done = done;
+    this.completed = done;
   }
 }
